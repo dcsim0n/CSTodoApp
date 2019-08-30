@@ -1,0 +1,11 @@
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\bin\Debug\netcoreapp2.2\CSTodoApp.deps.json
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\bin\Debug\netcoreapp2.2\CSTodoApp.runtimeconfig.json
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\bin\Debug\netcoreapp2.2\CSTodoApp.runtimeconfig.dev.json
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\bin\Debug\netcoreapp2.2\CSTodoApp.dll
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\bin\Debug\netcoreapp2.2\CSTodoApp.pdb
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\obj\Debug\netcoreapp2.2\CSTodoApp.csprojAssemblyReference.cache
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\obj\Debug\netcoreapp2.2\CSTodoApp.csproj.CoreCompileInputs.cache
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\obj\Debug\netcoreapp2.2\CSTodoApp.AssemblyInfoInputs.cache
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\obj\Debug\netcoreapp2.2\CSTodoApp.AssemblyInfo.cs
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\obj\Debug\netcoreapp2.2\CSTodoApp.dll
+C:\Users\Dana\Dev\CSTodoApp\CSTodoApp\obj\Debug\netcoreapp2.2\CSTodoApp.pdb
