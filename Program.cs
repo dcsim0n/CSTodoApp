@@ -14,17 +14,6 @@ namespace CSTodoApp
                 Console.WriteLine("0: Quit\n1: Add new task\n2: Complete a Task\nShow All Tasks\nWhich do you want?:");
                 choice = int.Parse(Console.ReadLine());
 
-                if(choice == 1)
-                {
-                    tasklist.NewTask();
-                }
-
-                if(choice == 2)
-                {
-                    tasklist.printTaskList();
-                    tasklist.CompleteTask();
-                }
-
                 switch (choice)
                 {
                     case 1:
