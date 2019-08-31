@@ -1,14 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace CSTodoApp
 {
-    class TaskList
-    {
-        public List<Task> tasks = new List<Task>();
+    class TaskContext : DbContext{
+        public DbSet<Task> Tasks { get; set; }
 
-        public Task NewTask()
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=tasks.db");
+        }
+    }
+    class TaskList 
+    {
+        // public List<Task> tasks = new List<Task>(); 
+        public TaskContext db = new TaskContext();
+
+        public void NewTask()
         {
             Console.WriteLine("Enter new task name:");
             string name= Console.ReadLine();
@@ -16,9 +26,9 @@ namespace CSTodoApp
             Console.WriteLine("Enter priority for new task:");
             int priority = int.Parse(Console.ReadLine());
 
-            tasks.Add(new Task(name,priority));
+            db.Tasks.Add(new Task {Name = name, Priority = priority} );
 
-            return tasks[tasks.Count - 1];  // return last task
+            
         }
 
         public void CompleteTask()
@@ -28,7 +38,9 @@ namespace CSTodoApp
 
             try
             {
-                tasks[taskID].Complete = true;
+                Task task = db.Tasks.Find(taskID);
+                task.Complete = true;
+                db.Tasks.Update(task);
             }
             catch
             {
@@ -40,14 +52,14 @@ namespace CSTodoApp
             Console.WriteLine("Current Tasks:");
             Console.WriteLine("-------------------------------------------");
 
-            for (int i = 0; i < tasks.Count; i++)
+            foreach (var task in db.Tasks)
             {
-                Console.WriteLine($"Task {i}:");
-                Console.WriteLine($"Name: {tasks[i].Name}");
-                Console.WriteLine($"Priority: {tasks[i].Priority}");
-                Console.WriteLine($"Complete?: {tasks[i].Complete}");
+                Console.WriteLine($"Task {task.ID}:");
+                Console.WriteLine($"Name: {task.Name}");
+                Console.WriteLine($"Priority: {task.Priority}");
+                Console.WriteLine($"Complete?: {task.Complete}");
                 Console.WriteLine("-------------------------------------------");
-
+                
             }
         }
     }
