@@ -28,6 +28,8 @@ namespace CSTodoApp
 
             db.Tasks.Add(new Task {Name = name, Priority = priority} );
 
+            var count = db.SaveChanges();
+            Console.WriteLine("{0} tasks saved in the database",count);
             
         }
 
@@ -41,6 +43,7 @@ namespace CSTodoApp
                 Task task = db.Tasks.Find(taskID);
                 task.Complete = true;
                 db.Tasks.Update(task);
+                db.SaveChanges();
             }
             catch
             {
